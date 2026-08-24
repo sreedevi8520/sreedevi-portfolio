@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kunapalli Sai Sridevi — Computer Science and Technology graduate focused on software development, frontend engineering, SQL, and practical application development.">
+<meta name="keywords" content="Kunapalli Sai Sridevi, Software Developer, Frontend Developer, Web Developer, Java, HTML, CSS, SQL, GitHub"><meta name="author" content="Kunapalli Sai Sridevi"><meta name="theme-color" content="#0a0a0f"><title>Kunapalli Sai Sridevi | Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--surface:#111118;--card:#16161f;--text:#f1f5f9;--secondary:#94a3b8;--muted:#475569;
+  --accent:#6366f1;--teal:#2dd4bf;--border:rgba(148,163,184,.14);--space:8px;
+  --shadow:0 20px 50px rgba(0,0,0,.28);--radius:20px;--nav:76px;
+}
+html.light{
+  --bg:#fff;--surface:#f8fafc;--card:#fff;--text:#0f172a;--secondary:#475569;--muted:#64748b;
+  --border:rgba(15,23,42,.12);--shadow:0 20px 50px rgba(15,23,42,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+.section{padding:96px 0}
+.eyebrow{font:600 13px/1.2 "Fira Code",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+h1,h2,h3{line-height:1.2;letter-spacing:-.02em}
+h2{font-size:clamp(32px,5vw,40px);margin-bottom:16px}
+h3{font-size:24px}
+p{color:var(--secondary)}
+.mono{font-family:"Fira Code",monospace}
+.nav{position:fixed;z-index:50;top:0;left:0;width:100%;height:var(--nav);display:flex;align-items:center;border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{background:color-mix(in srgb,var(--bg) 76%,transparent);backdrop-filter:blur(12px);border-color:var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:800;letter-spacing:-.04em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:14px;color:var(--secondary)}
+.nav-links a{transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.icon-btn,.hire{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:9px 13px;cursor:pointer}
+.hire{background:var(--accent);border-color:var(--accent);font-weight:700}
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 25%,rgba(99,102,241,.18),transparent 52%);pointer-events:none}
+.grid-bg{position:absolute;inset:0;opacity:.24;background-image:linear-gradient(rgba(148,163,184,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 80%);animation:gridMove 18s linear infinite}
+@keyframes gridMove{to{background-position:48px 48px}}
+.hero-content{position:relative;z-index:1;padding:120px 0 72px}
+.hero h1{font-size:clamp(48px,8vw,64px);max-width:900px;margin-bottom:24px;opacity:0;animation:fadeUp .8s .1s forwards}
+.hero-role{font-size:clamp(22px,4vw,32px);font-weight:700;margin-bottom:20px;min-height:42px}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--teal);margin-left:4px;vertical-align:-.12em;animation:blink .8s infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-copy{max-width:720px;font-size:17px;opacity:0;animation:fadeUp .8s .35s forwards}
+.ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px;opacity:0;animation:fadeUp .8s .55s forwards}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;border:1px solid var(--border);font-weight:700;transition:.25s}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.section-head{margin-bottom:48px;max-width:720px}
+.about-grid{display:grid;gap:48px}
+.about-copy{font-size:18px}
+.badge{display:inline-flex;margin-top:24px;padding:8px 12px;border:1px solid rgba(45,212,191,.3);border-radius:999px;color:var(--teal);font:500 13px "Fira Code",monospace;background:rgba(45,212,191,.05)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-self:center}
+.stat{padding:24px;border:1px solid var(--border);background:var(--card);border-radius:16px}
+.stat strong{display:block;font-size:28px;line-height:1.2;margin-bottom:8px}
+.stat span{font-size:13px;color:var(--secondary)}
+.timeline{position:relative;margin-left:8px;padding-left:32px;border-left:1px solid rgba(99,102,241,.55)}
+.experience-note{padding:20px 24px;border:1px solid var(--border);border-radius:16px;background:var(--card);color:var(--secondary)}
+.experience-note strong{color:var(--text)}
+.acc{position:relative;margin-bottom:24px}
+.acc:before{content:"";position:absolute;left:-37px;top:25px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+.acc-btn{width:100%;text-align:left;border:1px solid var(--border);background:var(--card);color:var(--text);padding:24px;border-radius:16px;cursor:pointer;display:flex;justify-content:space-between;gap:20px}
+.acc-title{font-weight:800;font-size:18px}.acc-meta{font:13px "Fira Code",monospace;color:var(--teal);margin-top:6px}
+.chev{transition:.3s}.acc.open .chev{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc.open .acc-body{max-height:420px}
+.acc-content{padding:20px 24px 8px;color:var(--secondary)}
+.acc-content ul{padding-left:20px}.acc-content li{margin-bottom:8px}
+.skills-grid{display:grid;gap:24px}
+.skill-group{padding:24px;border:1px solid var(--border);background:var(--card);border-radius:18px}
+.skill-group h3{font-size:16px;margin-bottom:16px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{font:500 13px "Fira Code",monospace;padding:7px 10px;border:1px solid var(--border);border-radius:999px;color:var(--secondary)}
+.top-skills{margin-top:32px;display:grid;gap:16px}
+.skill-row{display:grid;grid-template-columns:120px 1fr 42px;gap:16px;align-items:center;font-size:13px}
+.bar{height:6px;background:var(--surface);border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--teal));transition:width 1.2s ease}
+.projects{display:grid;gap:24px}
+.card{padding:28px;border:1px solid var(--border);background:var(--card);border-radius:18px;transition:.25s;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--teal));opacity:.7}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card h3{margin-bottom:12px}.card p{margin-bottom:20px}
+.card-links{display:flex;gap:16px;margin-top:24px;font-weight:700;font-size:14px}.card-links a{color:var(--teal)}
+.edu-grid{display:grid;gap:24px}
+.item{display:flex;gap:16px;align-items:flex-start;padding:24px;border:1px solid var(--border);background:var(--card);border-radius:18px}
+.item-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(99,102,241,.12);color:var(--accent);font-weight:800;flex:0 0 auto}
+.item small{display:block;color:var(--teal);font:500 12px "Fira Code",monospace;margin-top:6px}
+.contact{text-align:center}.contact .section-head{margin-left:auto;margin-right:auto}
+.email{display:inline-block;font-size:clamp(20px,4vw,30px);font-weight:800;color:var(--text);border-bottom:2px solid var(--accent);padding-bottom:4px}
+.socials{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}.socials a{padding:10px 14px;border:1px solid var(--border);border-radius:999px;color:var(--secondary);transition:.2s}.socials a:hover{color:var(--text);border-color:var(--accent);transform:translateY(-3px)}
+footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font:13px "Fira Code",monospace}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(min-width:760px){
+  .about-grid{grid-template-columns:1.05fr .95fr}.skills-grid{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:repeat(2,1fr)}.edu-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .nav-links{display:none}.nav-inner{width:100%}.stats{grid-template-columns:1fr}.section{padding:72px 0}.skill-row{grid-template-columns:100px 1fr 36px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== V2 recruiter polish ===== */
+.skip-link{position:fixed;left:16px;top:-60px;z-index:100;padding:10px 14px;background:var(--accent);color:#fff;border-radius:10px;font-weight:700;transition:.2s}
+.skip-link:focus{top:16px}
+.nav-status{display:none}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 20px;padding:7px 11px;border:1px solid var(--border);border-radius:999px;background:rgba(99,102,241,.06);font:500 12px "Fira Code",monospace;color:var(--secondary)}
+.hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal)}
+.hero-proof{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.proof-chip{padding:7px 10px;border:1px solid var(--border);border-radius:999px;color:var(--secondary);font:500 12px "Fira Code",monospace}
+.section-intro{font-size:17px;max-width:760px}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:10px}
+.project-number{font:600 12px "Fira Code",monospace;color:var(--muted)}
+.project-featured{font:600 11px "Fira Code",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.project-outcome{margin-top:18px;padding:14px 16px;border-left:2px solid var(--accent);background:rgba(99,102,241,.05);border-radius:0 10px 10px 0;color:var(--secondary);font-size:13px}
+.project-outcome strong{color:var(--text)}
+.project-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.project-links .btn{padding:10px 14px;font-size:13px}
+.resume-note{margin-top:12px;font-size:12px;color:var(--muted)}
+.contact-card{margin-top:32px;padding:32px;border:1px solid var(--border);background:var(--card);border-radius:20px}
+.availability{margin-top:24px;font:500 12px "Fira Code",monospace;color:var(--teal)}
+.focus-grid{display:grid;gap:16px;margin-top:32px}
+.focus-card{padding:20px;border:1px solid var(--border);background:var(--card);border-radius:16px}
+.focus-card strong{display:block;margin-bottom:6px}
+.focus-card span{color:var(--secondary);font-size:14px}
+.backtop{position:fixed;right:20px;bottom:20px;z-index:20;width:44px;height:44px;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);cursor:pointer;opacity:0;pointer-events:none;transition:.25s}
+.backtop.show{opacity:1;pointer-events:auto}
+.nav-links a:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,.hire:focus-visible,.acc-btn:focus-visible,.socials a:focus-visible,.email:focus-visible,.backtop:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+@media(min-width:760px){
+  .focus-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px){
+  .nav-actions .hire{display:none}
+  .hero-proof{gap:8px}
+  .contact-card{padding:24px}
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">S<span>S</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#focus">Focus</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions"><button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button><a class="hire" href="#contact">Hire me</a></div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="grid-bg"></div>
+  <div class="container hero-content">
+    <div class="hero-kicker"><i></i> OPEN TO SOFTWARE DEVELOPMENT OPPORTUNITIES</div>
+    <div class="eyebrow">Computer Science & Technology • Application Development</div>
+    <h1>Kunapalli Sai Sridevi</h1>
+    <div class="hero-role"><span id="role"></span><span class="cursor"></span></div>
+    <p class="hero-copy">Computer Science and Technology graduate building practical software experiences with Java, HTML5, CSS3, SQL, and a strong foundation in application development, problem solving, and maintainable code.</p>
+    <div class="ctas"><a class="btn primary" href="#projects">View my work</a><a class="btn" href="sreedeviIT.resume.pdf" download>Download Resume</a></div>
+    <div class="hero-proof"><span class="proof-chip">Java</span><span class="proof-chip">HTML5 / CSS3</span><span class="proof-chip">SQL</span><span class="proof-chip">GitHub</span></div>
+  </div>
+</header>
+
+<main id="main">
+<section class="section reveal" id="about">
+<div class="container">
+<div class="section-head"><div class="eyebrow">01 / About</div><h2>Building a strong foundation for real-world software.</h2><p class="section-intro">I learn by building: from responsive interfaces to a secure carpooling concept, I focus on clear structure, usability, responsible data handling, and practical software fundamentals.</p></div>
+<div class="about-grid">
+<div><p class="about-copy">Results-driven Computer Science and Technology graduate with a strong foundation in programming, application development, database management, and maintainable code. A quick learner with analytical thinking, communication skills, and a strong interest in software development and application engineering.</p><div class="badge">● Open to software development opportunities</div></div>
+<div class="stats">
+<div class="stat"><strong>2022–26</strong><span>B.Tech journey</span></div>
+<div class="stat"><strong>2+</strong><span>Featured projects</span></div>
+<div class="stat"><strong>2</strong><span>Internship / certification experiences</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="experience">
+<div class="container">
+<div class="section-head"><div class="eyebrow">02 / Experience</div><h2>Experience & practical learning.</h2><p>The supplied profile emphasizes academic projects, frontend development exposure, and an Android Developer Virtual Internship rather than a conventional full-time employment history.</p></div>
+<div class="timeline">
+<article class="acc open">
+<button class="acc-btn" aria-expanded="true"><span><span class="acc-title">Android Developer Virtual Intern</span><span class="acc-meta">Virtual Internship • Certification listed on profile</span></span><span class="chev">⌄</span></button>
+<div class="acc-body"><div class="acc-content"><ul><li>Completed an Android developer virtual internship, building practical exposure to application development concepts.</li><li>Strengthened understanding of software development practices and technology-driven problem solving.</li><li>Applied a learning-oriented approach to new tools and development practices.</li></ul></div></div>
+</article>
+<article class="acc">
+<button class="acc-btn" aria-expanded="false"><span><span class="acc-title">Frontend Development Exposure</span><span class="acc-meta">Academic / project-based experience</span></span><span class="chev">⌄</span></button>
+<div class="acc-body"><div class="acc-content"><ul><li>Used HTML5 and CSS3 to structure and style responsive user-facing pages.</li><li>Focused on clean page structure, usability, accessibility, readability, and responsive UI.</li><li>Applied frontend concepts directly in the Secure Carpooling System and personal portfolio project.</li></ul></div></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="skills">
+<div class="container">
+<div class="section-head"><div class="eyebrow">03 / Skills</div><h2>Tools I use to turn ideas into working software.</h2></div>
+<div class="skills-grid">
+<div class="skill-group"><h3>Programming Languages</h3><div class="pills"><span class="pill">Java</span><span class="pill">C</span></div></div>
+<div class="skill-group"><h3>Web Technologies</h3><div class="pills"><span class="pill">HTML5</span><span class="pill">CSS3</span></div></div>
+<div class="skill-group"><h3>Database</h3><div class="pills"><span class="pill">SQL</span><span class="pill">Relational Database Fundamentals</span></div></div>
+<div class="skill-group"><h3>Tools & Platforms</h3><div class="pills"><span class="pill">Visual Studio Code</span><span class="pill">GitHub</span><span class="pill">Microsoft Office</span><span class="pill">EditPlus</span></div></div>
+<div class="skill-group"><h3>Operating Systems</h3><div class="pills"><span class="pill">Windows</span><span class="pill">Linux</span></div></div>
+<div class="skill-group"><h3>Professional Strengths</h3><div class="pills"><span class="pill">Problem Solving</span><span class="pill">Analytical Thinking</span><span class="pill">Communication</span><span class="pill">Teamwork</span><span class="pill">Quick Learning</span></div></div>
+</div>
+<div class="top-skills">
+<div class="skill-row"><span>Java</span><div class="bar"><i data-width="82%"></i></div><span>82%</span></div>
+<div class="skill-row"><span>HTML5</span><div class="bar"><i data-width="88%"></i></div><span>88%</span></div>
+<div class="skill-row"><span>CSS3</span><div class="bar"><i data-width="84%"></i></div><span>84%</span></div>
+<div class="skill-row"><span>SQL</span><div class="bar"><i data-width="76%"></i></div><span>76%</span></div>
+<div class="skill-row"><span>GitHub</span><div class="bar"><i data-width="70%"></i></div><span>70%</span></div>
+</div>
+<p style="margin-top:16px;font-size:12px;color:var(--muted)">Proficiency bars are portfolio presentation estimates, not formal assessments.</p>
+</div>
+</section>
+
+<section class="section reveal" id="projects">
+<div class="container">
+<div class="section-head"><div class="eyebrow">04 / Featured Work</div><h2>Projects that show how I learn by building.</h2></div>
+<div class="projects">
+<article class="card">
+  <div class="project-top"><span class="project-number">01 / FEATURED</span><span class="project-featured">Flagship project</span></div>
+  <h3>Secure Carpooling System</h3>
+  <p>A web-based carpooling concept designed to help users find and coordinate shared transportation in a structured, user-friendly environment.</p>
+  <div class="pills"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">System Design</span><span class="pill">Security Considerations</span></div>
+  <div class="project-outcome"><strong>Focus:</strong> user-facing usability, controlled interaction, responsible handling of user-related data, and practical ride-sharing coordination.</div>
+  <div class="project-links"><a class="btn primary" href="https://github.com/sreedevi8520" target="_blank" rel="noopener">View GitHub ↗</a><a class="btn" href="#contact">Discuss project</a></div>
+</article>
+<article class="card">
+  <div class="project-top"><span class="project-number">02 / PERSONAL</span><span class="project-featured">Responsive UI</span></div>
+  <h3>Personal Portfolio Website</h3>
+  <p>A responsive portfolio experience presenting professional information, technical skills, education, and projects with clean navigation and professional presentation.</p>
+  <div class="pills"><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Responsive UI</span><span class="pill">Accessibility</span></div>
+  <div class="project-outcome"><strong>Focus:</strong> readable content hierarchy, simple navigation, responsive user-interface elements, and presentation across screen sizes.</div>
+  <div class="project-links"><a class="btn primary" href="https://github.com/sreedevi8520" target="_blank" rel="noopener">View GitHub ↗</a><a class="btn" href="#home">Live page ↗</a></div>
+</article>
+</div></div>
+</div>
+</section>
+
+<section class="section reveal" id="education">
+<div class="container">
+<div class="section-head"><div class="eyebrow">05 / Education & Certifications</div><h2>Academic foundation.</h2></div>
+<div class="edu-grid">
+<article class="item"><div class="item-icon">B</div><div><h3>B.Tech in Computer Science and Technology</h3><p>Nimra College of Engineering and Technology</p><small>2022 – 2026 • CGPA 7.84 / 10</small></div></article>
+<article class="item"><div class="item-icon">I</div><div><h3>Intermediate – MPC</h3><p>Sri Chaitanya Junior College</p><small>2020 – 2022 • 66%</small></div></article>
+<article class="item"><div class="item-icon">S</div><div><h3>Board of Secondary High School</h3><p>Gnana Jyothi Vidhyalayam High School</p><small>2019 – 2020 • 93%</small></div></article>
+<article class="item"><div class="item-icon">C</div><div><h3>AWS Cloud Practitioner</h3><p>Certification listed on supplied profile</p><small>Certification</small></div></article>
+<article class="item"><div class="item-icon">A</div><div><h3>Android Developer Virtual Intern</h3><p>Virtual internship listed on supplied profile</p><small>Internship</small></div></article>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="focus">
+<div class="container">
+<div class="section-head"><div class="eyebrow">06 / Role Focus</div><h2>Where I can contribute from day one.</h2><p class="section-intro">Based on the supplied profile, these are the clearest role directions for my current foundation and project experience.</p></div>
+<div class="focus-grid">
+<article class="focus-card"><strong>Software Developer</strong><span>Java, programming fundamentals, SQL, application development, problem solving.</span></article>
+<article class="focus-card"><strong>Frontend / Web Developer</strong><span>HTML5, CSS3, responsive UI, usability, accessibility, and structured page design.</span></article>
+<article class="focus-card"><strong>Application Engineering</strong><span>Project-based system design, database fundamentals, maintainable code, and quick learning.</span></article>
+</div>
+</div>
+</section>
+
+<section class="section reveal contact" id="contact">
+<div class="container">
+<div class="section-head"><div class="eyebrow">07 / Contact</div><h2>Let's build something together.</h2><p>If you're hiring for software development, application engineering, or frontend-focused opportunities, I'd be happy to connect.</p></div>
+<div class="contact-card"><a class="email" href="mailto:devikunapalli340@gmail.com">devikunapalli340@gmail.com</a><div class="availability">● Available for entry-level software opportunities</div></div>
+<div class="socials"><a href="https://www.linkedin.com/in/kunapalli-sai-sridevi-53300b348" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/sreedevi8520" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:devikunapalli340@gmail.com">Email ↗</a></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container">Kunapalli Sai Sridevi • 2026 • Built with HTML, CSS & Vanilla JavaScript</div></footer>
+<button class="backtop" id="backtop" aria-label="Back to top">↑</button>
+
+<script>
+const root=document.documentElement, themeBtn=document.getElementById('themeBtn');
+const saved=localStorage.getItem('theme');
+if(saved==='light') root.classList.add('light');
+themeBtn.textContent=root.classList.contains('light')?'☾':'☼';
+themeBtn.addEventListener('click',()=>{root.classList.toggle('light');const light=root.classList.contains('light');localStorage.setItem('theme',light?'light':'dark');themeBtn.textContent=light?'☾':'☼'});
+
+const roles=['Software Developer','Frontend Developer','Application Engineer'];
+let ri=0,ci=0,deleting=false;const roleEl=document.getElementById('role');
+function typeRole(){
+ const word=roles[ri];roleEl.textContent=word.slice(0,ci);
+ if(!deleting && ci<word.length){ci++;setTimeout(typeRole,75)}
+ else if(!deleting){deleting=true;setTimeout(typeRole,1400)}
+ else if(ci>0){ci--;setTimeout(typeRole,42)}
+ else{deleting=false;ri=(ri+1)%roles.length;setTimeout(typeRole,350)}
+}
+typeRole();
+
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+document.querySelectorAll('.acc-btn').forEach(btn=>btn.addEventListener('click',()=>{
+ const acc=btn.parentElement, open=acc.classList.toggle('open');btn.setAttribute('aria-expanded',open);
+}));
+
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+reveals.forEach(el=>observer.observe(el));
+
+const bars=document.querySelectorAll('.bar i');
+const barObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.width;barObserver.unobserve(e.target)}}),{threshold:.4});
+bars.forEach(b=>barObserver.observe(b));
+
+const sections=[...document.querySelectorAll('main section')];
+const links=[...document.querySelectorAll('.nav-links a')];
+const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});
+sections.forEach(s=>sectionObserver.observe(s));
+
+const backtop=document.getElementById('backtop');
+window.addEventListener('scroll',()=>backtop.classList.toggle('show',scrollY>600),{passive:true});
+backtop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+</script>
+</body>
+</html>
